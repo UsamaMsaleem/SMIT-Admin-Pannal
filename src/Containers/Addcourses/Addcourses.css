@@ -1,5 +1,11 @@
 .hedingcourse{
     color: #282262;
     text-align: center;
+}
 
+.Input{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px
 }
