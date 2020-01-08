@@ -1,0 +1,54 @@
+.hedingResult{
+    color: #282262;
+    text-align: center;
+
+}
+.main{
+    margin-top: 10%;
+    
+    justify-content: center;
+    align-items: center;
+}
+#registerdbutton{
+    margin-left: 44%;
+    margin-right: 44%;
+}
+
+.Searching{
+    width: 20%;
+
+}
+@media only screen and (max-width: 400px) {
+    #registerdbutton{
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+    .main{
+        margin-top: 20%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/* .buttonResult{
+    width: "20%";
+    margin:"auto"
+    
+    
+} */
+/* #tableResult{
+    width: "50%";
+    align-self: center;
+} */
+/* .autos {
+    width: 60%;
+    margin: 0px auto;
+    padding: 10px;
+    margin-left: 23.5%;
+    margin-top: -2%;
+    /* height:30% ; */
+/* } */ 
+/* .btn-block {
+    display: block;
+    width: 100%;
+} */
+
