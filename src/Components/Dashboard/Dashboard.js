@@ -18,6 +18,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import BookIcon from '@material-ui/icons/Book';
 import { Link } from 'react-router-dom';
 // import Link from '@material-ui/core/Link';
 import Registeredstudent from '../../Containers/Registeredstudent/Registeredstudent';
@@ -185,6 +186,14 @@ export default function Dashboard(props) {
                         <LayersIcon />
                     </ListItemIcon>
                     <ListItemText primary="Add Courses" />
+                </ListItem>
+                </Link>
+                <Link to="/Availablecourses">
+                <ListItem button>
+                    <ListItemIcon>
+                        <BookIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Available Courses" />
                 </ListItem>
                 </Link>
             </Drawer>

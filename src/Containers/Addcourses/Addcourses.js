@@ -27,8 +27,10 @@ class Addcourses extends React.Component {
     this.state = {
       Timing: "",
       courseTiming: [],
-      isactive:false,
-      editTiming:""
+      isactive: false,
+      editTiming: "",
+      instruction: "",
+      instructionAdd: []
     };
   }
 
@@ -46,10 +48,10 @@ class Addcourses extends React.Component {
     this.setState({ courseTiming: this.state.courseTiming });
   }
 
-  toggle(i){
+  toggle(i) {
     this.setState({
       isactive: true,
-      index:i,
+      index: i
     });
   }
 
@@ -57,18 +59,23 @@ class Addcourses extends React.Component {
     this.state.courseTiming[this.state.index] = this.state.editTiming;
     this.setState({
       courseTiming: this.state.courseTiming,
-      editTiming:"",
-      isactive: false,
+      editTiming: "",
+      isactive: false
     });
   }
-  // edit(i) {
-  //   var newdata = prompt(i);
-  //   var index = i;
-  //   this.state.courseTiming[index] = newdata;
-  //   this.setState({
-  //     courseTiming: this.state.courseTiming
-  //   });
-  // }
+  instructionAdd() {
+    const instructionAdd = this.state.instructionAdd;
+    instructionAdd.push(this.state.instruction);
+    this.setState({
+      instructionAdd,
+      instruction: ""
+    });
+  }
+  instructiondelete(i) {
+    const instructionAdd = this.state.instructionAdd;
+    instructionAdd.splice(i, 1);
+    this.setState({ instructionAdd: this.state.instructionAdd });
+  }
 
   render() {
     console.log(this.state.courseTiming);
@@ -98,9 +105,10 @@ class Addcourses extends React.Component {
               />
               <Input
                 type="Number"
-                label="Roll Number Start"
+                label="Roll Number Sequence"
                 onChange={e => this.setState({ number: e.target.value })}
               />
+
               <div className="md-form input-group mb-3">
                 <input
                   value={this.state.Timing}
@@ -126,7 +134,9 @@ class Addcourses extends React.Component {
                     value={this.state.editTiming}
                     placeholder="Edit Course Timing"
                     type="text"
-                    onChange={e => this.setState({ editTiming: e.target.value })}
+                    onChange={e =>
+                      this.setState({ editTiming: e.target.value })
+                    }
                     className="form-control"
                   />
                   <div className="input-group-append">
@@ -136,7 +146,7 @@ class Addcourses extends React.Component {
                       color="primary"
                       aria-label="edit"
                     >
-                    Edit
+                      Edit
                     </Fab>
                   </div>
                 </div>
@@ -167,6 +177,44 @@ class Addcourses extends React.Component {
                   </div>
                 );
               })}
+
+              <div className="md-form input-group mb-3">
+                <input
+                  value={this.state.instruction}
+                  placeholder="Add Course Instruction"
+                  type="text"
+                  onChange={e => this.setState({ instruction: e.target.value })}
+                  className="form-control"
+                />
+                <div className="input-group-append">
+                  <Fab
+                    onClick={this.instructionAdd.bind(this)}
+                    className="button"
+                    color="primary"
+                    aria-label="add"
+                  >
+                    <AddIcon />
+                  </Fab>
+                </div>
+              </div>
+              {this.state.instructionAdd.map((v, i) => {
+                return (
+                  <div className="timings" key={i}>
+                    <span>{v}</span>
+                    <span className="edit-delete">
+                      <Fab
+                        onClick={() => this.instructiondelete(i)}
+                        size="small"
+                        color="secondary"
+                        aria-label="edit"
+                      >
+                        <DeleteIcon />
+                      </Fab>
+                    </span>
+                  </div>
+                );
+              })}
+
               <br />
               <Radio name="CourseOpen" onChange={a => this.Text(a, "course")} />
               <br />

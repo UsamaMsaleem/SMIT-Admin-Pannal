@@ -1,0 +1,23 @@
+.hedingcourse{
+    color: #282262;
+    text-align: center;
+}
+.Acourses{
+    color: #282262;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.coursetext{
+    color: #282262;
+    font-size: large;
+    margin-top: 10px;
+}
+.coursetime{
+    margin-top: 10px;
+    color: #282262;
+    font-size: large;
+}
+.Acoursedit{
+    display:  flex;
+    justify-content: space-between;
+}
