@@ -87,7 +87,8 @@ class Addcourses extends React.Component {
           </h1>
           <br />
           <div className="Input">
-            <MDBCol className="col-sm-12 col-md-6 col-lg-12">
+          <div className="col-md-6" >
+            {/* <MDBCol className="col-sm-12 col-md-6 col-lg-12"> */}
               <Input
                 type="text"
                 label="Course Name"
@@ -145,6 +146,8 @@ class Addcourses extends React.Component {
                       className="button"
                       color="primary"
                       aria-label="edit"
+                      size="small"
+
                     >
                       Edit
                     </Fab>
@@ -219,7 +222,8 @@ class Addcourses extends React.Component {
               <Radio name="CourseOpen" onChange={a => this.Text(a, "course")} />
               <br />
               <Button name="Submit" />
-            </MDBCol>
+            {/* </MDBCol> */}
+            </div>
           </div>
         </div>
       </Dashboard>

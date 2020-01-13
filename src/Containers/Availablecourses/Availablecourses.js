@@ -20,6 +20,7 @@ class Availablecourses extends React.Component {
     super();
     this.state = {
       open: false,
+      popup:false,
       Timings: ["friday", "Monday", "Tuesday", "Wednaesday"],
       Instructions: [
         "It is a long established fact that a reader will be distracted by the readable.",
@@ -39,6 +40,17 @@ class Availablecourses extends React.Component {
     } else {
       this.setState({
         open: false
+      });
+    }
+  }
+  Model() {
+    if (this.state.popup === false) {
+      this.setState({
+        popup: true
+      });
+    } else {
+      this.setState({
+        popup: false
       });
     }
   }
@@ -112,81 +124,7 @@ class Availablecourses extends React.Component {
                   </label>
                   <span className="edit-delete">
                     <Fab
-                      // onClick={() => this.toggle()}
-                      size="small"
-                      color="primary"
-                      aria-label="edit"
-                    >
-                      <EditIcon />
-                    </Fab>
-                  </span>
-                </div>
-              </div>
-            </div>
-
-
-            <br/>
-            <div className="card">
-              <div className="card-body">
-                <h4 className="card-title coursetext">
-                  <span className="Acourses">CourseName :</span> Mobile App And
-                  Web Development
-                </h4>
-                <h6 className="coursetext">
-                  <span className="Acourses">Status :</span>Open
-                </h6>
-                <h6 className="coursetext">
-                  <span className="Acourses">RollNoStart :</span> 10000
-                </h6>
-                <h6 className="coursetext">
-                  <span className="Acourses">RollNoSequence :</span>10005
-                </h6>
-
-                <h6>
-                  <span className="coursetext Acourses">Timings</span>
-                </h6>
-                {this.state.Timings.map((v, i) => {
-                  return (
-                    <div key={i}>
-                      <span className="coursetime">
-                        {i}: {v}
-                      </span>
-                    </div>
-                  );
-                })}
-                <br />
-                <h6>
-                  <span className="coursetext Acourses">Instructions</span>
-                </h6>
-                {this.state.Instructions.map((v, i) => {
-                  return (
-                    <div key={i}>
-                      <span className="coursetime">
-                        {i}: {v}
-                      </span>
-                    </div>
-                  );
-                })}
-
-                <br />
-                <div className="custom-control custom-switch Acoursedit">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="customSwitches"
-                    onChange={() => this.click()}
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="customSwitches"
-                  >
-                    <span className="Acourses">
-                      Toggle This Switch For Course Open
-                    </span>
-                  </label>
-                  <span className="edit-delete">
-                    <Fab
-                      // onClick={() => this.toggle()}
+                      onClick={this.Model.bind(this)} 
                       size="small"
                       color="primary"
                       aria-label="edit"
@@ -198,8 +136,31 @@ class Availablecourses extends React.Component {
               </div>
             </div>
           </MDBCol>
-        </div>
+          
+
+          {/* //popup coding// */}
+          {this.state.popup &&<div className="modal-dialog" role="document" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button  onClick={this.Model.bind(this)} type="button" className="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div className="modal-body">
+        ...
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={this.Model.bind(this)}>Close</button>
+        <button type="button" className="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+}  
+        
+</div>
       </Dashboard>
+      
     );
   }
 }
