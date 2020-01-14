@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'myFirstFont';
+  src: url('../src/Assets/fonts/Roboto-Light.ttf');
+} 
 .App {
-  text-align: center;
+  /* text-align: center; */
+  font-family: 'myFirstFont' !important;
 }
 
 .App-logo {
@@ -20,3 +25,4 @@
 .App-link {
   color: #09d3ac;
 }
+

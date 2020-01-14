@@ -19,5 +19,13 @@
 }
 .Acoursedit{
     display:  flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 15px;
+    
+}
+
+.edit-delete{
+    float: right;  
+    display: flex;
+    justify-content: space-evenly; 
 }

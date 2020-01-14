@@ -1,5 +1,17 @@
 .hedingResult{
     color: #282262;
     text-align: center;
-
+    font-family: 'myFirstFont' !important;
 }
+@font-face {
+    font-family: 'myFirstFont';
+    src: url('../../Assets/fonts/Roboto-Italic.ttf');
+  } 
+
+  .timings{
+      margin-top: 0%;
+  }
+  .result{
+      display: flex;
+      justify-content: space-around;
+  }

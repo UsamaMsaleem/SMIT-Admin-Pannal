@@ -102,14 +102,9 @@ class Addcourses extends React.Component {
               <Input
                 type="Number"
                 label="Roll Number Start"
-                onChange={e => this.setState({ number: e.target.value })}
+                onChange={e => this.setState({ rollnoStart: e.target.value })}
               />
-              <Input
-                type="Number"
-                label="Roll Number Sequence"
-                onChange={e => this.setState({ number: e.target.value })}
-              />
-
+              
               <div className="md-form input-group mb-3">
                 <input
                   value={this.state.Timing}
